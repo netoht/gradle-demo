@@ -1,0 +1,4 @@
+// execute:
+// gradle build -b example2-java_plugin.gradle
+
+apply plugin: 'java'

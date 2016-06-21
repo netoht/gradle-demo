@@ -1,0 +1,35 @@
+/*
+ * execute:
+ * $ gradle -q helloWorld -b example1-tasks.gradle
+ */
+task helloWorld << {
+  println 'hello, world'
+}
+
+
+/*
+ * execute:
+ * $ gradle -q world -b example1-tasks.gradle
+ */
+task hello << {
+  print 'hello, '
+}
+
+task world(dependsOn: hello) << {
+  println 'world'
+}
+
+
+/*
+ * execute:
+ * $ gradle -q hello2 -b example1-tasks.gradle
+ */
+task hello2
+
+hello2 << {
+  print 'hello, '
+}
+
+hello2 << {
+  println 'world'
+}
